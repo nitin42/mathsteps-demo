@@ -46,5 +46,5 @@ This will show a prompt asking for the build directory path.
 
 For domain name, use `mathsteps.surge.sh` only 😅
 
-Traversing the codebase should be quite easy. All the components live under [`components`](./src/components)` directory.
+Traversing the codebase should be quite easy. All the components live under [`components`](./src/components) directory.
 
