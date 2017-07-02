@@ -8,22 +8,22 @@ Feel free to suggest changes or add new content.
 
 ```
 $ git clone https://github.com/socraticorg/mathsteps-demo
-cd  mathsteps-demo
-npm install
+$ cd mathsteps-demo
+$ npm install
 ```
 
 ## Start development server
 
 ```
-npm run start
+$ npm run start
 ```
 
-> Note - The demo is bootstrapped using `[create-react-app](https://github.com/facebookincubator/create-react-app)`.
+> Note - The demo is bootstrapped using [`create-react-app`](https://github.com/facebookincubator/create-react-app).
 
 ## Build
 
 ```
-npm run build
+$ npm run build
 ```
 
 ## Deploying 
@@ -31,13 +31,13 @@ npm run build
 For publishing the changes and deploying, you will need [surge](https://surge.sh/).
 
 ```
-npm install -g surge
+$ npm install -g surge
 ```
 
 After running `npm run build`, we will need to deploy the demo. 
 
 ```
-surge
+$ surge
 ```
 
 This will show a prompt asking for the build directory path.
@@ -46,5 +46,5 @@ This will show a prompt asking for the build directory path.
 
 For domain name, use `mathsteps.surge.sh` only 😅
 
-Traversing the codebase should be quite easy. All the components live under `[components](./src/components)` directory.
+Traversing the codebase should be quite easy. All the components live under [`components`](./src/components)` directory.
 
