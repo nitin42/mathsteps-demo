@@ -1,0 +1,26 @@
+{
+  "name": "mathsteps-website",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "mathsteps-test": "^1.0.2",
+    "prop-types": "^15.5.10",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "styled-components": "^2.0.0"
+  },
+  "devDependencies": {
+    "babel-loader": "^7.1.1",
+    "babili-webpack-plugin": "^0.1.2",
+    "clean-webpack-plugin": "^0.1.16",
+    "mathsteps": "^0.1.6",
+    "react-scripts": "1.0.6",
+    "webpack": "^3.0.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
