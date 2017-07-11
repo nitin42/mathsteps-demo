@@ -1,101 +1,94 @@
-import React, { Component } from "react";
-import styled from "styled-components";
-import mathsteps from "mathsteps-test";
-import Radio from "./Radio";
-import Search from "./Search";
-import Steps from "./Steps";
-import { media } from "../utils/main";
+import React, { Component } from 'react';
+import mathsteps from 'mathsteps-test';
+import Radio from './Radio';
+import Input from './Input';
+import Steps from './Steps';
+import './Demo.css';
 
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.4em;
-  ${media.handheld`
-    font-size: 1em;
-  `}
-`;
+const EXPRESSION_EXAMPLE = '2x + 2x + x + x';
+const EQUATION_EXAMPLE = '2x + 2x = 12';
 
-const Heading = styled.h1`
-  margin-top: 20px;
-`;
-
+/** Demo component for displayig the steps and radio buttons for the options**/
 class Demo extends Component {
-  static displayName = "Demo";
+  static displayName = 'Demo';
 
   state = {
-    value: "2x + 2x + x + x",
+    mathString: EXPRESSION_EXAMPLE,
     steps: [],
     simplify: true,
     solve: false
   };
 
-  handleChange = e => {
+  handleMathStringChange = e => {
     this.setState({
-      value: e.target.value
+      mathString: e.target.value
     });
   };
 
-  handleClick = (e) => {
-    const { simplify, solve, value } = this.state;
+  // Event handler for getting the steps
+  getSteps = e => {
+    const { simplify, solve, mathString } = this.state;
     let steps;
 
     if (simplify) {
-      steps = mathsteps.simplifyExpression(value);
+      steps = mathsteps.simplifyExpression(mathString);
     } else if (solve) {
-      steps = mathsteps.solveEquation(value);
+      steps = mathsteps.solveEquation(mathString);
     }
 
-    if (steps.length !== 0) {
+    if (steps && steps.length !== 0) {
       this.setState({
         steps: steps
       });
     } else {
-      alert("OOPS! No steps for " + this.state.value + ". Try a different equation 😄");
+      alert(
+        'OOPS! No steps for ' +
+          this.state.mathString +
+          '. Try a different equation 😄'
+      );
     }
   };
 
-  handleSimplify = (e) => {
+  // Simplify 
+  handleSimplify = e => {
     this.setState({
       simplify: e.target.checked,
       solve: false,
-      value: "2x + 2x + x + x"
+      mathString: EXPRESSION_EXAMPLE
     });
   };
 
-  handleSolve = (e) => {
+  // Solve
+  handleSolve = e => {
     this.setState({
       simplify: false,
       solve: e.target.checked,
-      value: "2x + 2x = 12"
+      mathString: EQUATION_EXAMPLE
     });
   };
 
   render() {
-    const { simplify, solve, value, steps } = this.state;
+    const { simplify, solve, mathString, steps } = this.state;
 
     return (
       <div>
-        <Container>
-          <Heading>Let's get started. Enter an equation {""}</Heading>
-          <Search 
-            value={value}
-            handleChange={this.handleChange}
-            handleClick={this.handleClick}
+        <div className='container'>
+          <h1 className='subheading'>
+            Let's get started. Enter a math expression or equation.
+          </h1>
+          <Input
+            value={mathString}
+            handleMathStringChange={this.handleMathStringChange}
+            getSteps={this.getSteps}
           />
-          <Radio 
+          <Radio
             simplify={simplify}
             solve={solve}
             handleSimplify={this.handleSimplify}
             handleSolve={this.handleSolve}
           />
-          <Steps
-            steps={steps}
-            simplify={simplify}
-            solve={this.state.solve}
-          />
-        </Container>
+          <Steps steps={steps} simplify={simplify} solve={this.state.solve} />
+        </div>
       </div>
     );
   }

@@ -1,11 +1,13 @@
-import React, { PureComponent } from "react";
-import PropTypes from "prop-types";
-import Show from "./Show";
-import Solve from "./Solve";
-import Simplify from "./Simplify";
+import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
+import Show from './Show';
+import Solve from './Solve';
+import Simplify from './Simplify';
+import './Steps.css';
 
+/** Steps component for updating the new steps and managing the state switch between simplify and solve*/
 class Steps extends PureComponent {
-  static displayName = "Steps";
+  static displayName = 'Steps';
 
   static propTypes = {
     steps: PropTypes.array,
@@ -17,14 +19,13 @@ class Steps extends PureComponent {
     updateSteps: []
   };
 
-  componentWillReceiveProps = nextProps => {
+  componentWillReceiveProps = (nextProps) => {
     const { steps, simplify, solve } = this.props;
 
     if (nextProps.steps !== steps) {
       this.setState({
         updateSteps: nextProps.steps
       });
-      console.log(this.state.updateSteps);
     } else if (nextProps.simplify !== simplify || nextProps.solve !== solve) {
       this.setState({
         updateSteps: []
@@ -38,11 +39,9 @@ class Steps extends PureComponent {
 
     const renderer = updateSteps.map((step, i) => {
       return (
-        <div key={i} className="steps">
-          {simplify
-            ? <Simplify step={step} />
-            : solve ? <Solve step={step} i={i} /> : <div />}
-          <br />
+        <div key={i} className='steps'>
+          {simplify && <Simplify step={step} />}
+          {solve && <Solve step={step} i={i} />}
         </div>
       );
     });

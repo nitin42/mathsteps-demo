@@ -1,13 +1,3 @@
-import { css } from 'styled-components'
-
-const media = {
-  handheld: (...args) => css`
-    @media (max-width: 420px) {
-      ${ css(...args) }
-    }
-  `
-}
-
 const normalize = (step) => {
 	return step.toLowerCase().replace(/_/g, ' ');
 }
@@ -24,5 +14,4 @@ export {
 	normalize,
 	trimAll,
 	trimOne,
-	media,
 };

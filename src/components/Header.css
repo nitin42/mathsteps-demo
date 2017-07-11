@@ -1,0 +1,44 @@
+.heading-mathsteps {
+  font-family: AvenirNext-Regular;
+  font-size: 64px;
+  color: #4A4A4A;
+  letter-spacing: 10.84px;
+  margin-top: 30px;
+}
+
+.container-two {
+	padding: 20px;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.description {
+  font-family: AvenirNext-Regular;
+  font-size: 18px;
+  color: #4A4A4A;
+  letter-spacing: 5.14px;
+  margin-top: 5px;
+  padding: 15px;
+}
+
+@media only screen and (max-width: 420px) {
+  .heading-mathsteps {
+    font-family: AvenirNext-Regular;
+    font-size: 2.2em;
+    color: #4A4A4A;
+    letter-spacing: 7px;
+    margin-top: 30px;
+  }
+
+  .description {
+    font-family: AvenirNext-Regular;
+    font-size: 0.6em;
+    color: #4A4A4A;
+    letter-spacing: 1px;
+  }
+}
