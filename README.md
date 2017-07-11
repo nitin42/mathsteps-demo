@@ -18,6 +18,8 @@ npm install
 npm run start
 ```
 
+The demo will be running at - `http://localhost:3000`.
+
 > Note - The demo is bootstrapped using `[create-react-app](https://github.com/facebookincubator/create-react-app)`.
 
 ## Build
@@ -46,5 +48,6 @@ This will show a prompt asking for the build directory path.
 
 For domain name, use `mathsteps.surge.sh` only 😅
 
-Traversing the codebase should be quite easy. All the components live under `[components](./src/components)` directory.
+If you're new to the codebase, check out the components that make up this site, which
+in the [`components`](./src/components) directory.
 
