@@ -10,17 +10,16 @@
     "styled-components": "^2.0.0"
   },
   "devDependencies": {
-    "babel-loader": "^7.1.1",
-    "babili-webpack-plugin": "^0.1.2",
-    "clean-webpack-plugin": "^0.1.16",
-    "mathsteps": "^0.1.6",
-    "react-scripts": "1.0.6",
-    "webpack": "^3.0.0"
+    "gh-pages": "^1.0.0",
+    "react-scripts": "1.0.6"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
-  }
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  },
+  "homepage": "socraticorg.github.io/mathsteps-demo"
 }
