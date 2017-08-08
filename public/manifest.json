@@ -1,11 +1,8 @@
 {
 <<<<<<< HEAD
-  "short_name": "React App",
-  "name": "Create React App Sample",
-=======
+<<<<<<< HEAD
   "short_name": "Mathsteps Demo",
   "name": "Mathsteps working demo",
->>>>>>> d45443141f1c516d15b4b1fabecb197b84a64b40
   "icons": [
     {
       "src": "favicon.ico",
